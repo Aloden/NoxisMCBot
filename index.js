@@ -1,7 +1,7 @@
 
 const fs = require('node:fs');
 const { Client, Collection, Intents, MessageEmbed, Permissions, ReactionCollector, MessageButton, MessageActionRow } = require('discord.js');
-console.log("fdsfs")
+
 const { cId, gId } = require("./config.json")
 const token = process.env["token"]
 
@@ -42,7 +42,3 @@ for (const file of eventFiles) {
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
-
-
-
-console.log("fdsfs")
