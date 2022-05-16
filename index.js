@@ -4,7 +4,7 @@ const { Client, Collection, Intents, MessageEmbed, Permissions, ReactionCollecto
 
 const { cId, gId } = require("./config.json")
 const token = process.env["token"]
-
+fsdfdsfds
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 client.login(token);
 client.cId = cId
