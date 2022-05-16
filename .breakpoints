@@ -1,0 +1,20 @@
+{
+  "files": {
+    "commands/updatepermission.js": [
+      {
+        "id": "8e8e5aaf-5342-4f06-b9c8-57ac9b4b20d1",
+        "line": 11,
+        "version": 43,
+        "index": 313
+      }
+    ],
+    "index.js": [
+      {
+        "id": "1f8b5325-8c14-4923-8d73-9b58b19aa14a",
+        "line": 22,
+        "version": 569,
+        "index": 850
+      }
+    ]
+  }
+}
