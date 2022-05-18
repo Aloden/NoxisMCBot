@@ -1,5 +1,6 @@
-const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js")
+const { MessageEmbed, MessageActionRow, MessageButton, Guilds } = require("discord.js")
 
+let a = 2
 module.exports = {
 	name: 'interactionCreate',
 	once: false,
@@ -22,7 +23,8 @@ const Boutons = new MessageActionRow()
             .setLabel('🔒')
             .setStyle('SECONDARY'))
 
-async function main(interaction) {
+async function main(interaction, clientest) {
+	console.log(clientest)
     let client = interaction.client
     
     if (interaction.isCommand()) {
@@ -39,7 +41,7 @@ async function main(interaction) {
 	    }
     } else if(interaction.isButton()) {
 	  let staffRole = interaction.guild.roles.cache.find(r => r.id === client.staffID);
-    let supportRole = interaction.guild.roles.cache.find(r => r.id === client.supportID)
+    	let supportRole = interaction.guild.roles.cache.find(r => r.id === client.supportID)
 	  let channel1 = interaction.guild.channels.cache.find(c => c.name === `enjeux-${interaction.user.username.toLowerCase()}`)
 	  let channel2 = interaction.guild.channels.cache.find(c => c.name === `boutique-${interaction.user.username.toLowerCase()}`)
 	  let channel3 = interaction.guild.channels.cache.find(c => c.name === `autre-${interaction.user.username.toLowerCase()}`)
@@ -61,7 +63,7 @@ async function main(interaction) {
       }).then(async c => {
 			  c.setParent(category)
 			  c.setTopic(interaction.user.id)
-        c.send({embeds: [channelEmbed], components:[Boutons], content: supportRole.toString()})
+        	c.send({embeds: [channelEmbed], components:[Boutons], content: supportRole.toString()})
 			  embed2.setDescription(`\n**»** ✅ Ton ticket à bien été créer : ${c}`)
 			  await interaction.reply({embeds: [embed2]})
 			  await c.permissionOverwrites.edit(interaction.user.id, { VIEW_CHANNEL: true})
@@ -89,7 +91,7 @@ async function main(interaction) {
       }).then(async c => {
 			  c.setParent(category)
 			  c.setTopic(interaction.user.id)
-        c.send({embeds: [channelEmbed], components:[Boutons], content: supportRole.toString()})
+        		c.send({embeds: [channelEmbed], components:[Boutons], content: supportRole.toString()})
 			  embed2.setDescription(`\n**»** ✅ Ton ticket à bien été créer : ${c}`)
 			  await interaction.editReply({embeds: [embed2]})
 			  await c.permissionOverwrites.edit(interaction.user.id, { VIEW_CHANNEL: true})
@@ -155,3 +157,4 @@ async function main(interaction) {
     }
   }
 }
+
