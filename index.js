@@ -3,7 +3,7 @@ const { Client, Collection, Intents, MessageEmbed, Permissions, ReactionCollecto
 
 const { cId, gId, token, mongo } = require("./config.json")
 const mongoose = require("mongoose")
-
+let a = 1
 mongoose.connect(mongo, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
